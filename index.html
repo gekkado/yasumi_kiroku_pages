@@ -4,76 +4,264 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>休み記録｜有給休暇をかんたん管理</title>
+  <title>休み記録｜自分の有給休暇を管理するアプリ</title>
 
-  <meta name="description" content="休み記録は、有給休暇・特別休暇・欠勤を手軽に記録・集計できるシンプルな休暇管理アプリです。アカウント不要、ローカルで安心して使えます。">
+  <meta name="description" content="休み記録は、有給休暇・特別休暇・欠勤を記録・集計できるシンプルな休暇管理アプリです。データは端末内で管理されアカウント不要で使えます。">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="休み記録｜自分の有給休暇を管理するアプリ">
+  <meta property="og:url" content="https://gekkado.github.io/yasumi_kiroku_pages/">
+  <meta property="og:image" content="https://gekkado.github.io/yasumi_kiroku_pages/images/play_store_1024x500.png">
+
+  <link rel="canonical" href="https://gekkado.github.io/yasumi_kiroku_pages/">
 
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
   >
-</head>
-<body>
 
+  <style>
+    /* ちょい足し：スクショを見やすく */
+    :root { --page-max: 980px; }
+    main.container { max-width: var(--page-max); }
+    .hero {
+      padding: 2.25rem 0 1rem;
+    }
+    .hero p {
+      max-width: 42rem;
+    }
+    .cta {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    figure.appshot {
+      margin: 0;
+      text-align: center;
+    }
+    figure.appshot img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      border-radius: 22px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.12);
+      background: #fff;
+    }
+    .card {
+      padding: 1.1rem;
+      border: 1px solid var(--pico-muted-border-color);
+      border-radius: var(--pico-border-radius);
+      background: var(--pico-card-background-color);
+    }
+    .card h3 { margin-top: .9rem; margin-bottom: .35rem; font-size: 1.05rem; }
+    .muted { color: var(--pico-muted-color); }
+    .tight { margin-top: .25rem; }
+    .note {
+      border-left: 4px solid var(--pico-primary);
+      padding: .85rem 1rem;
+      background: rgba(0,0,0,.02);
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body>
 <main class="container">
 
   <!-- ヒーロー -->
-  <header>
-    <h1>休み記録</h1>
+  <header class="hero">
+
+    <img src="./images/play_store_1024x500.png" style="margin-bottom: 40px;" alt="休み記録のヒーロー画像">
+
+    <div class="grid" style="max-width: 360px; margin: 0 auto; text-align: center;">
+      <div>
+        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.yasumikiroku.android&amp;hl=ja">
+          <img style="height: 50px;" alt="休み記録をGoogle Play で手に入れよう" src="./images/download_google_play_badge.png">
+        </a>
+      </div>
+      <div>
+        <a target="_blank" href="https://apps.apple.com/jp/app/id6758830875">
+          <img style="height: 50px;" alt="休み記録をApp Store からダウンロード" src="./images/download_app_store_badge.png">
+        </a>
+      </div>
+    </div>
+
+    <h1 style="margin-top: 40px;">休み記録</h1>
     <p>
-      有給休暇を、<strong>シンプルに・確実に</strong>管理するためのアプリ
+      自分の有給休暇・特別休暇・欠勤を記録できる、休暇を管理するためのアプリです。<br>
+      「残りの有給休暇は何日だっけ？」といった疑問をアプリが解決します。
     </p>
+    <p>
+      アカウント不要ですぐに開始できます。
+    </p>
+
+    <div class="cta">
+      <a href="#screens" role="button">画面で見る</a>
+      <a href="#features" role="button" class="secondary">主な特徴</a>
+    </div>
   </header>
 
-  <!-- 概要 -->
-  <section>
-    <h2>アプリについて</h2>
-    <p>
-      「休み記録」は、自分の有給休暇や特別休暇、欠勤などを
-      手軽に記録・管理するためのアプリです。
-    </p>
-    <p>
-      アカウント登録は不要で、データは端末内で管理されるため、
-      安心して利用できます。
-    </p>
-  </section>
+  <hr>
 
   <!-- 特徴 -->
-  <section>
+  <section id="features">
     <h2>主な特徴</h2>
     <ul>
       <li>有給休暇・特別休暇・欠勤をまとめて記録</li>
-      <li>指定した期間ごとの取得日数・時間・分を自動集計</li>
-      <li>アカウント不要ですぐ使える</li>
-      <li>ローカル動作でプライバシーに配慮</li>
+      <li>指定した期間ごとの取得合計（<strong>日数・時間・分</strong>）を自動集計</li>
+      <li>有給残り日数もひと目で確認（1日・半日・時間単位にも対応）</li>
+      <li>アカウント不要ですぐ使える／ローカル動作でプライバシーに配慮</li>
     </ul>
   </section>
 
-  <!-- 集計説明 -->
-  <section>
-    <h2>集計機能</h2>
-    <p>
-      集計画面では、指定した期間内に取得した休暇について、
-      合計の「日数・時間・分」をまとめて確認できます。
+  <!-- 画面で見る -->
+  <section id="screens">
+    <h2>画面でわかる「休み記録」</h2>
+    <p class="muted tight">
+      実際の画面イメージと一緒に、できることを紹介します。
     </p>
-    <p>
-      自分の休暇取得状況を、ひと目で把握できます。
-    </p>
+
+    <div class="grid">
+      <article class="card">
+        <figure class="appshot">
+          <img src="./images/paid_leave.png" alt="有給休暇のトップ画面：有給残り日数と最新の有給休暇履歴" loading="lazy">
+        </figure>
+        <h3>有給休暇の残りをひと目で確認</h3>
+        <p class="tight">
+          有給休暇の<strong>残り日数・時間</strong>をトップで確認できます。
+          直近の取得履歴も見えるので、「いつ取ったか」もすぐ分かります。
+        </p>
+      </article>
+
+      <article class="card">
+        <figure class="appshot">
+          <img src="./images/new.png" alt="有給取得を記録する画面：取得日、取得単位（1日・半日・詳細）、メモ、保存ボタン" loading="lazy">
+        </figure>
+        <h3>取得をパパッと記録</h3>
+        <p class="tight">
+          休暇を取得した時は、取得日（期間）と取得単位を選ぶだけ。メモも残せます。
+          取得単位で<strong>詳細</strong>を選べば時と分まで登録できます。
+        </p>
+      </article>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <figure class="appshot">
+          <img src="./images/other_leave.png" alt="その他休暇の画面：最新のその他休暇と選択できる休暇一覧、その他取得を記録ボタン" loading="lazy">
+        </figure>
+        <h3>特別休暇を管理</h3>
+        <p class="tight">
+          慶弔・夏季・年末年始・リフレッシュなど<strong>有給以外の休暇</strong>も記録できます。
+          休暇種類や並び順は自由に編集できます。
+        </p>
+      </article>
+
+      <article class="card">
+        <figure class="appshot">
+          <img src="./images/absence.png" alt="欠勤の画面：最新の欠勤と欠勤を記録するボタン" loading="lazy">
+        </figure>
+        <h3>欠勤を管理</h3>
+        <p class="tight">
+          欠勤も休暇と同じ流れで記録できます。
+        </p>
+      </article>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <figure class="appshot">
+          <img src="./images/summary.png" alt="集計の画面：集計期間（開始日・終了日）と取得合計（有給休暇、その他休暇、欠勤）の表示" loading="lazy">
+        </figure>
+        <h3>期間を指定して自動集計</h3>
+        <p class="tight">
+          開始日・終了日を指定するだけで、期間内の取得合計を表示します。
+          <strong>有給／その他休暇／欠勤</strong>をまとめて確認でき、状況をひと目で把握できます。
+        </p>
+      </article>
+    </div>
   </section>
+
+  <!-- まとめ -->
+  <section id="summary">
+    <h2>こんな人におすすめ</h2>
+    <ul>
+      <li>有給の残りが分からなくて困っている</li>
+      <li>特別休暇や欠勤もまとめて記録したい</li>
+      <li>期間を指定して集計したい</li>
+    </ul>
+
+    <div class="card">
+      <p style="text-align: center;">
+        アカウント不要ですぐに開始できます。
+      </p>
+
+      <h3 style="text-align: center; margin-bottom: 20px;">今すぐダウンロード</h3>
+
+      <div class="grid" style="max-width: 360px; margin: 0 auto; text-align: center;">
+        <div>
+          <a target="_blank" href="https://play.google.com/store/apps/details?id=com.yasumikiroku.android&amp;hl=ja">
+            <img style="height: 50px;" alt="休み記録をGoogle Play で手に入れよう" src="./images/download_google_play_badge.png">
+          </a>
+        </div>
+        <div>
+          <a target="_blank" href="https://apps.apple.com/jp/app/id6758830875">
+            <img style="height: 50px;" alt="休み記録をApp Store からダウンロード" src="./images/download_app_store_badge.png">
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 有休ノートへの導線 -->
+  <section id="yukyu-note">
+    <h2>会社で有給休暇を管理するなら</h2>
+
+    <p>
+      「休み記録」は、<strong>個人が自分の休暇を把握するため</strong>のアプリです。
+    </p>
+
+    <p>
+      <strong>会社全体の有給休暇を管理したい</strong>場合は、有給休暇管理のクラウドサービス「有休ノート」をご利用ください。
+    </p>
+
+    <div class="card">
+      <a href="https://yukyu-note.com/" target="_blank">
+        <img src="./images/site_yukyu_note.png" style="margin-bottom: 40px;" alt="有休ノートのサイト画像">
+      </a>
+
+      <h4>有休ノートとは</h4>
+
+      <ul>
+        <li>社員の有給休暇を会社単位で一元管理</li>
+        <li>付与・取得・残日数を自動で集計</li>
+        <li>管理者・従業員双方にとって分かりやすい設計</li>
+      </ul>
+
+
+      <p style="text-align: center; margin-top: 1.5rem;">
+        <a href="https://yukyu-note.com/" target="_blank" role="button" class="secondary">
+          有休ノートの公式サイトを見る
+        </a>
+      </p>
+    </div>
+  </section>
+
 
   <!-- フッター -->
   <footer>
     <hr>
     <nav>
       <ul>
-        <li><a href="privacy.html">プライバシーポリシー</a></li>
-        <li><a href="terms.html">利用規約</a></li>
+        <li><a href="privacy">プライバシーポリシー</a></li>
+        <li><a href="terms">利用規約</a></li>
       </ul>
     </nav>
     <small>© 株式会社月華堂</small>
   </footer>
 
 </main>
-
 </body>
 </html>
