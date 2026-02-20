@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gekkado.github.io/yasumi_kiroku_pages/sitemap.xml

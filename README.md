@@ -6,11 +6,14 @@
 - 利用規約
 - プライバシーポリシー
 
+上記のページは `sitemap.xml` で検索エンジンに伝えます。
+
 ## URLについて
 
 Github Pages を利用しており、サイトは次のURLで公開されます。
 
 https://gekkado.github.io/yasumi_kiroku_pages/
+
 
 ## 利用しているCSSフレームワーク
 
